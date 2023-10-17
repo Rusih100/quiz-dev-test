@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "quiz-dev-test"
+version = "0.1.0"
+description = ""
+authors = ["Rusih100 <rusih100@gmail.com>"]
+readme = "README.md"
+packages = [{include = "quiz_dev_test"}]
+
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
