@@ -4,8 +4,10 @@ router = APIRouter(prefix="/questions", tags=["Questions"])
 
 
 @router.get("")
-async def get_all_questions(): pass
+async def get_all_questions():
+    pass
 
 
 @router.post("")
-async def create_question(): pass
+async def create_question():
+    pass
