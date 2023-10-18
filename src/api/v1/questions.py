@@ -13,7 +13,13 @@ router = APIRouter(prefix="/questions", tags=["Questions"])
 @router.post(
     "",
     response_model=QuestionListReadSchema,
-    status_code=status.HTTP_201_CREATED,
+    summary="Получение вопросов из публичного API",
+    description=(
+        "Запрашивает вопросы из публичного API и сохраняет их в базе данных. "
+        "Возвращает предыдущие сохраненные вопросы из базы данных.<br><br>"
+        "**questions_num** - количество запрашиваемых вопросов."
+    ),
+    status_code=status.HTTP_202_ACCEPTED,
 )
 async def create_question(
     question_service: QuestionServiceDepends,
