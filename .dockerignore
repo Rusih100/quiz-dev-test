@@ -1,4 +1,6 @@
 .idea
+.gitignore
 .ruff_cache
-.env
+.git
+.example.env
 docker_data
