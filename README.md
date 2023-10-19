@@ -20,7 +20,7 @@ DB_DATABASE_NAME=quiz
 DB_DRIVER=asyncpg
 DB_USER=postgres
 DB_PASSWORD=YOUR_PASSWORD
-DB_HOST=127.0.0.1
+DB_HOST=database
 DB_PORT=5432
 ```
 
@@ -35,3 +35,27 @@ docker-compose build
 ```shell
 docker-compose up 
 ```
+
+## Как сделать запрос к API
+API содержит один эндпоинт:  
+```POST: /api/v1/questions``` - получение вопросов из публичного API. Принимает параметр **questions_num**, 
+количество запрашиваемых вопросов из API, в json в теле запроса. 
+    
+
+
+### Curl
+Ниже приведен пример запроса к API через curl
+```shell
+curl -X 'POST' \
+  'http://127.0.0.1:8000/api/v1/questions' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "questions_num": 10
+}'
+```
+
+### Swagger или ReDoc
+Запрос можно сделать через документацию доступную по путям:   
+```/docs``` - Swagger  
+```/redoc``` - ReDoc
